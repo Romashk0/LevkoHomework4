@@ -27,24 +27,27 @@ public class MainActivity extends Activity implements View.OnClickListener, Comp
     private EditText etOper;
     private Switch swStyle;
     private SharedPreferences sp;
+    private int i;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        sp = getSharedPreferences(Constants.APP_PREFERENCES, Context.MODE_PRIVATE);
+        if (sp.contains(Constants.APP_PREFERENCES)) {
+            i = sp.getInt(Constants.APP_PREFERENCES, 0);
+            ThemeUtils.onActivityCreateSetTheme(this, i);
+            Log.d("sa", "ss" + i);
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         onFindViews();
+        setSwitchPosition();
         onListeners();
+    }
 
-        sp = getSharedPreferences(Constants.APP_PREFERENCES, Context.MODE_PRIVATE);
-
-        if (sp.contains(Constants.APP_PREFERENCES)) {
-            int i = sp.getInt(Constants.APP_PREFERENCES, 0);
-            ThemeUtils.onActivityCreateSetTheme(this, i);
-            if (i ==1)swStyle.setChecked(true);
-            else swStyle.setChecked(false);
-        }
+    private void setSwitchPosition() {
+        if (i == 1) swStyle.setChecked(true);
+        else swStyle.setChecked(false);
     }
 
     public void onFindViews() {
@@ -133,7 +136,7 @@ public class MainActivity extends Activity implements View.OnClickListener, Comp
                     tvB.setText(data.getStringExtra("rez"));
             }
         } else {
-            Toast.makeText(getApplicationContext(), "ви не ввели значення", Toast.LENGTH_SHORT)
+            Toast.makeText(getApplicationContext(), "Ви не ввели значення", Toast.LENGTH_SHORT)
                     .show();
         }
     }
@@ -141,10 +144,10 @@ public class MainActivity extends Activity implements View.OnClickListener, Comp
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         SharedPreferences.Editor editor = sp.edit();
-        editor.putInt(Constants.APP_PREFERENCES, isChecked?1:0);
+        editor.putInt(Constants.APP_PREFERENCES, isChecked ? Constants.THEME_2 : Constants.THEME_1);
         editor.apply();
-        if (isChecked)
-           ThemeUtils.changeToTheme(this,R.style.AppTheme);
-         else ThemeUtils.changeToTheme(this, R.style.AppTheme2);
+        if (!isChecked)
+            ThemeUtils.changeToTheme(this, R.style.AppTheme);
+        else ThemeUtils.changeToTheme(this, R.style.AppTheme2);
     }
 }

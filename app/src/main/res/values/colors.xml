@@ -9,4 +9,8 @@
     <color name="colorWhite">#ffffff</color>
     <color name="colorOrange">#f95611</color>
     <color name="colorBlack">#000000</color>
+    <color name="colorRed">#c91212</color>
+    <color name="colorPink">#d12b68</color>
+    <color name="colorDarkRed">#790303</color>
+    <color name="colorGrey">#3b3737</color>
 </resources>

@@ -1,11 +1,13 @@
 <resources>
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-    <item name="android:buttonStyle">@style/ButtonStyle</item>
+        <item name="android:buttonStyle">@style/ButtonStyle</item>
+        <item name="android:textViewStyle">@style/TextViewStyle</item>
+        <item name="android:windowBackground">@drawable/shape_relat_layout</item>
     </style>
 
     <style name="TextViewStyle">
-        <item name="android:background">@drawable/selector_tv</item>
+        <item name="android:background">@drawable/shape_tv</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/textView_height</item>
         <item name="android:layout_margin">@dimen/textView_margin</item>
@@ -18,16 +20,17 @@
         <item name="android:background">@drawable/shape_et</item>
         <item name="android:textSize">@dimen/textSizeET</item>
         <item name="android:textColorHint">@color/colorBlack</item>
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/textView_height</item>
+        <!--<item name="android:layout_height">@dimen/textView_height</item>-->
         <item name="android:layout_margin">@dimen/textView_margin</item>
         <item name="android:layout_gravity">center</item>
         <item name="android:gravity">center</item>
+        <item name="android:clickable">true</item>
     </style>
 
     <style name="ButtonStyle">
         <item name="android:background">@drawable/selector_btn</item>
         <item name="android:textSize">@dimen/textSizeBtn</item>
+        <item name="android:gravity">center</item>
     </style>
 
     <style name="TextViewResStyle">
@@ -41,6 +44,25 @@
         <item name="android:textSize">@dimen/textSize</item>
     </style>
 
-    <style name="AppTheme2" parent="Base.Theme.AppCompat"/>
+    <style name="AppTheme2" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:buttonStyle">@style/ButtonStyle2</item>
+        <item name="android:editTextStyle">@style/EditTextStyle2</item>
+        <item name="android:textViewStyle">@style/TextViewStyle2</item>
+        <item name="android:windowBackground">@drawable/shape_relat_layout2</item>
+    </style>
+
+    <style name="ButtonStyle2" parent="ButtonStyle">
+        <item name="android:background">@drawable/selector_btn2</item>
+    </style>
+
+    <style name="EditTextStyle2" parent="EditTextStyle">
+        <item name="android:background">@drawable/shape_et2</item>
+
+    </style>
+
+    <style name="TextViewStyle2" parent="TextViewStyle">
+        <item name="android:background">@drawable/shape_tv2</item>
+        <item name="android:textColorHint">@color/colorBlack</item>
+    </style>
 
 </resources>

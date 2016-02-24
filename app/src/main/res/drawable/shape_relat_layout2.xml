@@ -2,13 +2,12 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
     <stroke
-        android:width="2dp"
-        android:color="@color/colorGrey"
-        android:dashWidth="20dp"
-        android:dashGap="5dp"/>
+        android:width="3dp"
+        android:color="@color/colorBlack" />
     <gradient
         android:angle="225"
-        android:startColor="@color/colorOrange"
-        android:endColor="@color/colorPink"
+        android:centerColor="@color/colorGrey"
+        android:endColor="@color/colorRed"
+        android:startColor="@color/colorDarkRed"
         android:type="linear" />
 </shape>

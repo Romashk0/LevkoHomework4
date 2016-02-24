@@ -12,4 +12,6 @@ public class Constants {
     public static final String MULTIPLY = "*";
     public static final String DIVIDE = "/";
     public static final String APP_PREFERENCES = "APP_PREFERENCES";
+    public static final int THEME_1 = 0;
+    public static final int THEME_2 = 1;
 }
