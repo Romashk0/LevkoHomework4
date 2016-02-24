@@ -86,6 +86,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:textOff="Light"
-        android:textOn="Dark" />
+        android:textOn="Dark"
+        android:onClick="changeTheme"/>
 
 </RelativeLayout>

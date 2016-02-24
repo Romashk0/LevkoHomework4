@@ -1,54 +1,46 @@
 package com.levko.roma.levkohomework4.Activitys;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.DragEvent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.levko.roma.levkohomework4.Constants;
 import com.levko.roma.levkohomework4.R;
-import com.levko.roma.levkohomework4.ThemeUtils;
 
-public class MainActivity extends Activity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
 
+public class MainActivity extends Activity implements View.OnClickListener{
+
+    public static boolean theme = true;
     private Button btnCalc;
     private TextView tvA, tvB, tvRes;
     private EditText etOper;
-    private Switch swStyle;
-    private SharedPreferences sp;
-    private int i;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        sp = getSharedPreferences(Constants.APP_PREFERENCES, Context.MODE_PRIVATE);
-        if (sp.contains(Constants.APP_PREFERENCES)) {
-            i = sp.getInt(Constants.APP_PREFERENCES, 0);
-            ThemeUtils.onActivityCreateSetTheme(this, i);
-            Log.d("sa", "ss" + i);
-        }
+
         super.onCreate(savedInstanceState);
+
+        if (theme) setTheme(R.style.AppTheme);
+        else setTheme(R.style.AppTheme2);
+
         setContentView(R.layout.activity_main);
+
         onFindViews();
-        setSwitchPosition();
         onListeners();
+        Switch aSwitch = (Switch) findViewById(R.id.sw);
+        aSwitch.setChecked(theme);
     }
 
-    private void setSwitchPosition() {
-        if (i == 1) swStyle.setChecked(true);
-        else swStyle.setChecked(false);
-    }
+
 
     public void onFindViews() {
         btnCalc = (Button) findViewById(R.id.btnCalc_AM);
@@ -56,16 +48,12 @@ public class MainActivity extends Activity implements View.OnClickListener, Comp
         tvB = (TextView) findViewById(R.id.tvB_AM);
         tvRes = (TextView) findViewById(R.id.tvRes_AM);
         etOper = (EditText) findViewById(R.id.etOperator_AM);
-        swStyle = (Switch) findViewById(R.id.sw);
     }
 
     private void onListeners() {
         btnCalc.setOnClickListener(this);
         tvA.setOnClickListener(this);
         tvB.setOnClickListener(this);
-        swStyle.setOnCheckedChangeListener(this);
-
-
     }
 
     @Override
@@ -140,14 +128,12 @@ public class MainActivity extends Activity implements View.OnClickListener, Comp
                     .show();
         }
     }
+    public void changeTheme(View view) {
+        if (theme) theme = false;
+        else theme = true;
 
-    @Override
-    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        SharedPreferences.Editor editor = sp.edit();
-        editor.putInt(Constants.APP_PREFERENCES, isChecked ? Constants.THEME_2 : Constants.THEME_1);
-        editor.apply();
-        if (!isChecked)
-            ThemeUtils.changeToTheme(this, R.style.AppTheme);
-        else ThemeUtils.changeToTheme(this, R.style.AppTheme2);
+        this.finish();
+        startActivity(new Intent(this, this.getClass()));
     }
+
 }
