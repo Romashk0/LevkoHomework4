@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">LevkoHomework4</string>
+    <string name="hint_a_tv">a</string>
+    <string name="hint_operator">operator</string>
+    <string name="hint_b">b</string>
+    <string name="calculate">Calculate</string>
+    <string name="btn_ok">OK</string>
+    <string name="text_hint_res">The calculation result</string>
 </resources>

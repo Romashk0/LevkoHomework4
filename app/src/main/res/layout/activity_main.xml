@@ -3,18 +3,86 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/shape_relat_layout"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.levko.roma.levkohomework4.MainActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
 
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvA_AM"
+                style="@style/TextViewStyle"
+                android:layout_weight="1"
+                android:hint="@string/hint_a_tv"
+                android:textSize="@dimen/input_tv" />
+
+            <EditText
+                android:id="@+id/etOperator_AM"
+                style="@style/EditTextStyle"
+                android:layout_weight="1"
+                android:hint="@string/hint_operator"
+                android:inputType="numberDecimal"
+                android:textSize="@dimen/textSizeET" />
+
+            <TextView
+                android:id="@+id/tvB_AM"
+                style="@style/TextViewStyle"
+                android:layout_weight="1"
+                android:hint="@string/hint_b"
+                android:textSize="@dimen/input_tv" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnCalc_AM"
+                style="@style/ButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:text="@string/calculate" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvRes_AM"
+                style="@style/TextViewResStyle"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:hint="@string/text_hint_res" />
+
+        </LinearLayout>
+    </LinearLayout>
 
     <Switch
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"/>
+        android:textOff="Light"
+        android:textOn="Dark" />
 
 </RelativeLayout>
