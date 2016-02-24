@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.levko.roma.levkohomework4.MainActivity">
+    tools:context=".Activitys.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -35,8 +35,8 @@
                 style="@style/EditTextStyle"
                 android:layout_weight="1"
                 android:hint="@string/hint_operator"
-                android:inputType="numberDecimal"
-                android:textSize="@dimen/textSizeET" />
+                android:textSize="@dimen/textSizeET"
+                android:maxLength="1"/>
 
             <TextView
                 android:id="@+id/tvB_AM"
@@ -54,7 +54,6 @@
 
             <Button
                 android:id="@+id/btnCalc_AM"
-                style="@style/ButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/button_height"
                 android:text="@string/calculate" />
@@ -80,6 +79,7 @@
     <Switch
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/sw"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:textOff="Light"

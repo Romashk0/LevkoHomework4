@@ -1,6 +1,8 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar"/>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <item name="android:buttonStyle">@style/ButtonStyle</item>
+    </style>
 
     <style name="TextViewStyle">
         <item name="android:background">@drawable/selector_tv</item>
@@ -38,5 +40,7 @@
         <item name="android:gravity">center</item>
         <item name="android:textSize">@dimen/textSize</item>
     </style>
+
+    <style name="AppTheme2" parent="Base.Theme.AppCompat"/>
 
 </resources>

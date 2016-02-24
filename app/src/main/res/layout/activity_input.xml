@@ -17,13 +17,15 @@
 
         <EditText
             style="@style/EditTextStyle"
-            android:id="@id/etInputValue_AI"
+            android:id="@+id/etInputValue_AI"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/input_tv" />
+            android:layout_height="@dimen/input_tv"
+            android:inputType="numberDecimal"
+            android:maxLength="3"/>
 
         <Button
             style="@style/ButtonStyle"
-            android:id="@id/btnOk_AI"
+            android:id="@+id/btnOk_AI"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/btn_ok"/>
