@@ -2,7 +2,6 @@ package com.levko.roma.levkohomework4.Activitys;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -115,7 +114,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
         super.onActivityResult(requestCode, resultCode, data);
 
         if (resultCode == RESULT_OK) {
-            Log.d(Constants.TAG, "повернення в головне актівіті");
+            Log.d(Constants.TAG, "Повернення в головне актівіті");
             switch (requestCode) {
                 case Constants.REQUEST_CODE_FOR_FIRST_NUMBER:
                     tvA.setText(data.getStringExtra("rez"));
