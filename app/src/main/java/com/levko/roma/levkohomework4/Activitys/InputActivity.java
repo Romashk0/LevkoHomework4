@@ -23,6 +23,8 @@ public class InputActivity extends Activity implements View.OnClickListener{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (MainActivity.theme) setTheme(R.style.AppTheme2);
+        else setTheme(R.style.AppTheme);
         setContentView(R.layout.activity_input);
             onFindviews();
             setListeners();

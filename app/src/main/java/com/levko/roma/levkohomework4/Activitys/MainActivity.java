@@ -28,8 +28,8 @@ public class MainActivity extends Activity implements View.OnClickListener{
 
         super.onCreate(savedInstanceState);
 
-        if (theme) setTheme(R.style.AppTheme);
-        else setTheme(R.style.AppTheme2);
+        if (theme) setTheme(R.style.AppTheme2);
+        else setTheme(R.style.AppTheme);
 
         setContentView(R.layout.activity_main);
 
